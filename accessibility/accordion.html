@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+      let buttons = document.querySelectorAll("#accordion button");
+      buttons.forEach((button) => {
+        let content = button.nextElementSibling;
+        button.addEventListener("click", (event) => {
+          if (button.classList.contains("active")) {
+            button.classList.remove("active");
+            button.setAttribute("aria-expanded", false);
+            content.style.maxHeight = null;
+            content.setAttribute("aria-hidden", true);
+          } else {
+            button.classList.add("active");
+            button.setAttribute("aria-expanded", true);
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.setAttribute("aria-hidden", false);
+          }
+        });
+      });
+    });
+    </script>
+</head>
+
+<body>
+    <ul id="accordion">
+        <li>
+          <button aria-controls="content-1" aria-expanded="false" id="accordion-1">How's your net solutions journey going so far?</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-1">
+            <p>i'm enjoying working here!! Lots of new things to learn</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-2" aria-expanded="false" id="accordion-2"> 
+            What do you like the most about net solutions?</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-2">
+            <p>The people here !! </p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-3" aria-expanded="false" id="accordion-3">How many days its been now in Net Solutions?</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-3">
+            <p>1 month almost!</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-4" aria-expanded="false" id="accordion-4">What are your working hours here?</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-4">
+            <p>8</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-5" aria-expanded="false" id="accordion-5">What field are you training in?</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-5">
+            <p>Python</p>
+          </div>
+        </li>
+      </ul>
+</body>
+
+</html>

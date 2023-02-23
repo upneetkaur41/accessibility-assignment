@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">ROLL NUMBER</th>
+                    <th scope="col">CLASS</th>
+                    <th scope="col">SUBJECT</th>
+                    <th scope="col">FIELD CHOOSEN</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Shreya </th>
+                    <td>1905266</td>
+                    <td>D3.ECE</td>
+                    <td>Python</td>
+                    <td>Developer</td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Ritvik</th>
+                    <td>1905267</td>
+                    <td>D3.ECE</td>
+                    <td>Python</td>
+                    <td>Developer</td>
+                
+                </tr>
+                <tr>
+                    <th scope="row">Deepak</th>
+                    <td>1905268</td>
+                    <td>D3.ECE</td>
+                    <td>Python</td>
+                    <td>Developer</td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Aayush</th>
+                    <td>1905269</td>
+                    <td>D3.ECE</td>
+                    <td>Python</td>
+                    <td>Developer </td>
+                   
+                </tr>
+                <tr>
+                    <th scope="row">Gurleen</th>
+                    <td>1905270</td>
+                    <td>D3.ECE</td>
+                    <td>Python</td>
+                    <td>Developer</td>
+                    
+                </tr>
+
+            </tbody>   
+        </table>
+    </div>
+
+
+    <!-- pop-up dialog box, containing a form -->
+  <dialog id="favDialog">
+    <p> Hello and welcome to the dialog box</p>
+    <p>Accessibility concept is important to be used in the websites</p>
+    <p>So that the user with disabilities and those who want to navigate the website through the keyboard can access it.</p>
+    <p> Contact if you have any doubts:</p>
+    <p id="telephone"  aria-label="teli">+(10)-365-7654</p>
+    <button id="close" aria-label="close">&times;</button>
+  </dialog>
+  
+  <div>
+    <button id="updateDetails">Read More</button>
+  </div>
+
+</body>
+
+<script>
+      const updateButton = document.getElementById("updateDetails");
+      const cancelButton = document.getElementById("close");
+      const dialog = document.getElementById("favDialog");
+      dialog.returnValue = "favAnimal";
+
+      function openCheck(dialog) {
+        if (dialog.open) {
+        console.log("Dialog open");
+        } else {
+          console.log("Dialog closed");
+        }
+      }
+
+    // Update button opens a modal dialog
+    updateButton.addEventListener("click", () => {
+    dialog.showModal();
+    openCheck(dialog);
+    });
+
+    // Form cancel button closes the dialog box
+    cancelButton.addEventListener("click", () => {
+    dialog.close("animalNotChosen");
+    openCheck(dialog);
+  });
+</script>
+</html>
